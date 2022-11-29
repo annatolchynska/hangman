@@ -11,7 +11,7 @@ def get_word():
 
 def play(word):
     """
-    The function running the game
+    The welcoming function of the game
     """
     word_completion = "_" * len(word)
     guessed = False
@@ -24,6 +24,9 @@ def play(word):
     print(display_hangman(tries))
     print(word_completion)
     print("\n")
+   
+    # Runs guessing process
+   
     while not guessed and tries > 0:
         guess = input("Please guess a letter or word: ")
         if len(guess) == 1 and guess.isalpha():
