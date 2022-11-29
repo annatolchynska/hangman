@@ -1,6 +1,7 @@
 # Import random word from the list in words.py
-import random 
+import random
 from words import word_list
+
 
 def get_word():
     """
@@ -8,6 +9,7 @@ def get_word():
     """
     word = random.choice(word_list)
     return word
+
 
 def play(word):
     """
@@ -18,22 +20,23 @@ def play(word):
     guessed_letters = []
     guessed_words = []
     tries = 6
+    print("-------------------------------------------------------")
     print("Welcome to Hangman game!\n")
+    print("-------------------------------------------------------")
     print("You have to guess random word by one letter at a time\n")
-    print("You only have six tries otherwise you'll be hanged /n")
+    print("You only have six tries otherwise you'll be hanged \n")
+    print("-------------------------------------------------------")
     print(display_hangman(tries))
     print(word_completion)
     print("\n")
-   
     # Runs guessing process
-   
     while not guessed and tries > 0:
         guess = input("Please guess a letter or word: ")
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
                 print("You've guessed correctly", guess)
             elif guess not in word:
-                print(guess, "Unfortunately you're one step closer to being hanged..")
+                print("Unfortunately you're one step closer to being hanged..")
                 tries -= 1
                 guessed_letters.append(guess)
             else:
@@ -64,7 +67,9 @@ def play(word):
     if guessed:
         print("Congrats, you guessed the word! You win!")
     else:
-        print("Sorry, you lost! The word was " + word + ". See you in the afterlife:-)")
+        print("Sorry, you lost! \n")
+        print("The word was " + word + ". See you in the afterlife:-)")
+
 
 def display_hangman(tries):
     """
@@ -77,7 +82,7 @@ def display_hangman(tries):
                    |      O
                    |     \|/
                    |      |
-                   |     / \
+                   |     / \\
                    -
                 """,
                 # head, torso, both arms, and one leg
@@ -87,7 +92,7 @@ def display_hangman(tries):
                    |      O
                    |     \|/
                    |      |
-                   |     / 
+                   |     /
                    -
                 """,
                 # head, torso, and both arms
@@ -97,7 +102,7 @@ def display_hangman(tries):
                    |      O
                    |     \|/
                    |      |
-                   |      
+                   |
                    -
                 """,
                 # head, torso, and one arm
@@ -107,7 +112,7 @@ def display_hangman(tries):
                    |      O
                    |     \|
                    |      |
-                   |     
+                   |
                    -
                 """,
                 # head and torso
@@ -117,7 +122,7 @@ def display_hangman(tries):
                    |      O
                    |      |
                    |      |
-                   |     
+                   |
                    -
                 """,
                 # head
@@ -125,23 +130,24 @@ def display_hangman(tries):
                    --------
                    |      |
                    |      O
-                   |    
-                   |      
-                   |     
+                   |
+                   |
+                   |
                    -
                 """,
                 # initial empty state
                 """
                    --------
                    |      |
-                   |      
-                   |    
-                   |      
-                   |     
+                   |
+                   |
+                   |
+                   |
                    -
                 """
     ]
     return stages[tries]
+
 
 def main():
     """
@@ -153,5 +159,7 @@ def main():
         word = get_word()
         play(word)
 
+
 if __name__ == "__main__":
     main()
+
