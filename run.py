@@ -1,6 +1,9 @@
 """
 Import random word from the list in words.py
 """
+# The code was taken from youtube tutorial "how to build a hangman
+# in 10 min with Python" by Kite
+# https://github.com/kiteco/python-youtube-code/blob/master/build-hangman-in-python/hangman.py
 import random
 from words import word_list
 
