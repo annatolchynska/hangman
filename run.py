@@ -11,7 +11,7 @@ from words import word_list
 
 def get_word():
     """
-    Defines random word from the words in words.py file
+    Defines random word from the chosen topic words.py file
     """
     word = random.choice(word_list).upper()
     return word
@@ -36,7 +36,7 @@ def game(word):
     lives = 6
     clear_board()
     print("-------------------------------------------------------")
-    print("{:^70}".format("Welcome to HANGMAN game!\n"))
+    print("{:^70}".format("Welcome to HANGMAN_GAME!\n"))
     print("-------------------------------------------------------")
     name = input("Please enter your name: ").upper()
     clear_board()

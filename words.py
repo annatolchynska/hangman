@@ -1,3 +1,6 @@
+"""
+The list of words for the main game
+"""
 word_list = [
     'knee',
     'busy',
