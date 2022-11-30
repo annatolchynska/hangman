@@ -5,6 +5,7 @@ Import random word from the list in words.py
 # in 10 min with Python" by Kite
 # https://github.com/kiteco/python-youtube-code/blob/master/build-hangman-in-python/hangman.py
 import random
+import os
 from words import word_list
 
 
@@ -16,6 +17,14 @@ def get_word():
     return word
 
 
+def clear_board():
+    """
+    Function that clears the terminal. Sourced from:
+    http://www.coding4you.at/inf_tag/beginners_python_cheat_sheet.pdf
+    """
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+
 def game(word):
     """
     The welcoming function of the game
@@ -25,15 +34,17 @@ def game(word):
     guessed_letters = []
     guessed_words = []
     lives = 6
+    clear_board()
     print("-------------------------------------------------------")
-    print("Welcome to HANGMAN game!\n")
+    print("{:^70}".format("Welcome to HANGMAN game!\n"))
     print("-------------------------------------------------------")
-    name = input("Please enter your name").upper()
-    print("You have to guess random word by one letter at a time,\n" + name)
+    name = input("Please enter your name: ").upper()
+    clear_board()
+    print("You have to guess random word by one letter at a time,\n")
     print("You only have six tries otherwise you'll be hanged \n")
     print("-------------------------------------------------------")
-    print("HAVE FUN," + name)
-    print(display_hangman(lives))
+    print("{:^70}".format("HAVE FUN, " + name + "!"))
+    print(hangman_pics(lives))
     print(word_complete)
     print("\n")
     # Runs guessing process
@@ -54,6 +65,7 @@ def game(word):
                 indices = [i for i, letter in enumerate(word) if letter == guess]
                 for index in indices:
                     word_as_list[index] = guess
+                # Replace blanks with correctly guessed letters
                 word_complete = "".join(word_as_list)
                 if "_" not in word_complete:
                     guessed = True
@@ -69,7 +81,7 @@ def game(word):
                 word_complete = word
         else:
             print("Not a valid guess.")
-        print(display_hangman(lives))
+        print(hangman_pics(lives))
         print(word_complete)
         print("\n")
     if guessed:
@@ -79,11 +91,11 @@ def game(word):
         print("The word was " + word + ". See you in the afterlife:-)")
 
 
-def display_hangman(lives):
+def hangman_pics(lives):
     """
     displays the figure of hangman from the first try up to the sixth
     """
-    levels = [  # final state: head, torso, both arms, and both legs
+    levels = [  # six wrong guesses: game over
                 """
                    --------
                    |      |
@@ -93,7 +105,7 @@ def display_hangman(lives):
                    |     / \\
                    -
                 """,
-                # head, torso, both arms, and one leg
+                # five wrong guesses
                 """
                    --------
                    |      |
@@ -103,7 +115,7 @@ def display_hangman(lives):
                    |     /
                    -
                 """,
-                # head, torso, and both arms
+                # four wrong guesses
                 """
                    --------
                    |      |
@@ -113,7 +125,7 @@ def display_hangman(lives):
                    |
                    -
                 """,
-                # head, torso, and one arm
+                # three wrong guesses
                 """
                    --------
                    |      |
@@ -123,7 +135,7 @@ def display_hangman(lives):
                    |
                    -
                 """,
-                # head and torso
+                # two wrong guesses
                 """
                    --------
                    |      |
@@ -133,7 +145,7 @@ def display_hangman(lives):
                    |
                    -
                 """,
-                # head
+                # one wrong guess
                 """
                    --------
                    |      |
@@ -143,7 +155,7 @@ def display_hangman(lives):
                    |
                    -
                 """,
-                # initial empty state
+                # state when the game starts
                 """
                    --------
                    |      |
@@ -165,6 +177,7 @@ def main():
     word = get_word()
     game(word)
     while input("Play Again? (Y/N) ").upper() == "Y":
+        clear_board()
         word = get_word()
         game(word)
 
