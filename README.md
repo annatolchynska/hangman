@@ -11,4 +11,16 @@ If the player suggests a letter which occurs in the word, the letter appears in 
 ## FEATURES
 ---
 ### Existing features
+* welcoming message and request to enter the player's name by input
+* explaining the rules of the game and display of the hidden word with an empty gallows
+* accepts user's input 
+* input validation 
+   * user cannot enter a word that has more or less letters than the hidden word
+   * the program informs the user if the letter is already used
+   * the game gives user the feedback when the letter/word is correct/incorrect
+* the end game message which informs of winning/loosing
+* request input to start new game or exit
+
+### Future features
+
 
