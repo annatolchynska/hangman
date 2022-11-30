@@ -1,4 +1,6 @@
-# Import random word from the list in words.py
+"""
+Import random word from the list in words.py
+"""
 import random
 from words import word_list
 
@@ -151,7 +153,8 @@ def display_hangman(tries):
 
 def main():
     """
-    function that runs the game
+    function that runs the game and gives the options
+    to run it again or exit
     """
     word = get_word()
     play(word)
