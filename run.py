@@ -12,62 +12,65 @@ def get_word():
     """
     Defines random word from the words in words.py file
     """
-    word = random.choice(word_list)
+    word = random.choice(word_list).upper()
     return word
 
 
-def play(word):
+def game(word):
     """
     The welcoming function of the game
     """
-    word_completion = "_" * len(word)
+    word_complete = "_" * len(word)
     guessed = False
     guessed_letters = []
     guessed_words = []
-    tries = 6
+    lives = 6
     print("-------------------------------------------------------")
-    print("Welcome to Hangman game!\n")
+    print("Welcome to HANGMAN game!\n")
     print("-------------------------------------------------------")
-    print("You have to guess random word by one letter at a time\n")
+    name = input("Please enter your name").upper()
+    print("You have to guess random word by one letter at a time,\n" + name)
     print("You only have six tries otherwise you'll be hanged \n")
     print("-------------------------------------------------------")
-    print(display_hangman(tries))
-    print(word_completion)
+    print("HAVE FUN," + name)
+    print(display_hangman(lives))
+    print(word_complete)
     print("\n")
     # Runs guessing process
-    while not guessed and tries > 0:
-        guess = input("Please guess a letter or word: ")
+    while not guessed and lives > 0:
+        guess = input("Please guess a letter or word: ").upper()
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
-                print("You've guessed correctly", guess)
+                print("You've already guessed the letter", guess)
+                # When the letter aleady has been used
             elif guess not in word:
                 print("Unfortunately you're one step closer to being hanged..")
-                tries -= 1
+                lives -= 1
                 guessed_letters.append(guess)
             else:
                 print("Well done!", guess, "is in the word!")
                 guessed_letters.append(guess)
-                word_as_list = list(word_completion)
+                word_as_list = list(word_complete)
                 indices = [i for i, letter in enumerate(word) if letter == guess]
                 for index in indices:
                     word_as_list[index] = guess
-                word_completion = "".join(word_as_list)
-                if "_" not in word_completion:
+                word_complete = "".join(word_as_list)
+                if "_" not in word_complete:
                     guessed = True
         elif len(guess) == len(word) and guess.isalpha():
             if guess in guessed_words:
                 print("You've correctly guessed the word", guess)
             elif guess != word:
                 print(guess, "is wrong!")
-                tries -= 1
+                lives -= 1
                 guessed_words.append(guess)
             else:
                 guessed = True
-                word_completion = word
+                word_complete = word
         else:
             print("Not a valid guess.")
-        print(display_hangman(tries))
-        print(word_completion)
+        print(display_hangman(lives))
+        print(word_complete)
         print("\n")
     if guessed:
         print("Congrats, you guessed the word! You win!")
@@ -76,11 +79,11 @@ def play(word):
         print("The word was " + word + ". See you in the afterlife:-)")
 
 
-def display_hangman(tries):
+def display_hangman(lives):
     """
-    displays the figure of hangman
+    displays the figure of hangman from the first try up to the sixth
     """
-    stages = [  # final state: head, torso, both arms, and both legs
+    levels = [  # final state: head, torso, both arms, and both legs
                 """
                    --------
                    |      |
@@ -151,7 +154,7 @@ def display_hangman(tries):
                    -
                 """
     ]
-    return stages[tries]
+    return levels[lives]
 
 
 def main():
@@ -160,10 +163,10 @@ def main():
     to run it again or exit
     """
     word = get_word()
-    play(word)
-    while input("Play Again? (y/n) ") == "y":
+    game(word)
+    while input("Play Again? (Y/N) ").upper() == "Y":
         word = get_word()
-        play(word)
+        game(word)
 
 
 if __name__ == "__main__":
