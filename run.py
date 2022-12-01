@@ -38,7 +38,7 @@ def game(word):
     print("-------------------------------------------------------")
     print("{:^70}".format("Welcome to HANGMAN_GAME!\n"))
     print("-------------------------------------------------------")
-    name = input("Please enter your name: ").upper()
+    name = input("Please enter your name: \n").upper()
     clear_board()
     print("You have to guess random word by one letter at a time,\n")
     print("You only have six tries otherwise you'll be hanged \n")
@@ -49,7 +49,7 @@ def game(word):
     print("\n")
     # Runs guessing process
     while not guessed and lives > 0:
-        guess = input("Please guess a letter or word: ").upper()
+        guess = input("Please guess a letter or word: \n").upper()
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
                 print("You've already guessed the letter", guess)
