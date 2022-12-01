@@ -86,8 +86,9 @@ While running the game I had the problem with a messy terminal. Fortunately, I f
 ---
 ### Credits
 * unicode for emojis was taken from [FileFormat.info](https://www.fileformat.info/)
-* the code for the game mostly was taken from Youtube tutorial [how to build a hangman
-in 10 min with Python"by Kite](https://www.youtube.com/watch?v=m4nEnsavl6w) and [GitHub kiteco](https://github.com/kiteco/python-youtube-code/blob/master/build-hangman-in-python/hangman.py)
+* the code for the game mostly was taken from Youtube tutorial ["how to build a hangman
+in 10 min with Python" by Kite](https://www.youtube.com/watch?v=m4nEnsavl6w) and [GitHub kiteco](https://github.com/kiteco/python-youtube-code/blob/master/build-hangman-in-python/hangman.py)
+* the code for function which clears the terminal was taken from these [sheets](http://www.coding4you.at/inf_tag/beginners_python_cheat_sheet.pdf)
 
 
 
