@@ -69,7 +69,25 @@ no significant errors were returned when passing through PEP8CI - [Website here]
 * Tested the code in the Code Institute Heroku terminal and also the terminal inside of Gitpod.
 * Checked that symbols, numbers or empty spaces are coming up as invalid guesses when guessing the word.
 
+---
+### Bugs and unfixed bugs
+While running the game I had the problem with a messy terminal. Fortunately, I found the solution with a function that clears terminal. No other bugs were found.
 
+---
+### Deployment
+* Fork or clone this repository.
+* Go to the Heroku Dashboard.
+* Click New.
+* Select create a new app.
+* Set the buildbacks to Python and NodeJS in that order.
+* Link the Heroku app to the repository.
+* Click on Deploy.
+
+---
+### Credits
+* unicode for emojis was taken from [FileFormat.info](https://www.fileformat.info/)
+* the code for the game mostly was taken from Youtube tutorial [how to build a hangman
+in 10 min with Python"by Kite](https://www.youtube.com/watch?v=m4nEnsavl6w) and [GitHub kiteco](https://github.com/kiteco/python-youtube-code/blob/master/build-hangman-in-python/hangman.py)
 
 
 

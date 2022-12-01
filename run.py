@@ -90,7 +90,7 @@ def game(word):
         print(word_complete)
         print("\n")
     if guessed:
-        print("CONGRATS! YOU GUESSED THE WORD! YOU WIN!")
+        print("CONGRATS! YOU GUESSED THE WORD! YOU WIN! \U0001F3C6")
     else:
         print("SORRY \U0001F62D YOU LOST! \n")
         print("THE WORD WAS " + word + ". SEE YOU IN THE AFTERLIFE \U0001F480")
