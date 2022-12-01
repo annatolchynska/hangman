@@ -36,12 +36,12 @@ def game(word):
     lives = 6
     clear_board()
     print("-------------------------------------------------------")
-    print("{:^70}".format("Welcome to HANGMAN_GAME!\n"))
+    print("{:^70}".format("Welcome to \u2620  HANGMAN_GAME! \u2620 \n"))
     print("-------------------------------------------------------")
     name = input("Please enter your name: \n").upper()
     clear_board()
-    print("You have to guess random word by one letter at a time,\n")
-    print("You only have six tries otherwise you'll be hanged \n")
+    print("YOU HAVE TO GUESS WORD BY ONE LETTER AT A TIME,\n")
+    print("YOU ONLY HAVE SIX TRIES OTHERWISE YOU'LL BE HANGED \n")
     print("-------------------------------------------------------")
     print("{:^70}".format("HAVE FUN, " + name + "!"))
     print(hangman_pics(lives))
@@ -51,44 +51,49 @@ def game(word):
     while not guessed and lives > 0:
         guess = input("Please guess a letter or word: \n").upper()
         if len(guess) == 1 and guess.isalpha():
+            # When the letter aleady has been used
             if guess in guessed_letters:
-                print("You've already guessed the letter", guess)
-                # When the letter aleady has been used
+                print("YOU'VE ALREADY GUESSED THE LETTER", guess)
+            # In case of incorrect answer
             elif guess not in word:
-                print("Unfortunately you're one step closer to being hanged..")
+                print("UNFORTUNATELY YOU'RE ONE STEP CLOSER TO BEING HANGED..")
                 lives -= 1
                 guessed_letters.append(guess)
+            # In case of correct letter
             else:
-                print("Well done!", guess, "is in the word!")
+                print("WELL DONE!", guess, "IS IN THE WORD!")
                 guessed_letters.append(guess)
+                # Replace dashes with correctly guessed letters
                 word_as_list = list(word_complete)
                 ind = [i for i, letter in enumerate(word) if letter == guess]
                 for index in ind:
                     word_as_list[index] = guess
-                # Replace blanks with correctly guessed letters
                 word_complete = "".join(word_as_list)
                 if "_" not in word_complete:
                     guessed = True
         elif len(guess) == len(word) and guess.isalpha():
+            # In case of correct guessing the word
             if guess in guessed_words:
-                print("You've correctly guessed the word", guess)
+                print("YOU'VE CORRECTLY GUESSED THE WORD", guess)
+            # In case of incorrect guessing the word
             elif guess != word:
-                print(guess, "is wrong!")
+                print(guess, "IS WRONG!")
                 lives -= 1
                 guessed_words.append(guess)
             else:
                 guessed = True
                 word_complete = word
+        # In case of invalid input (number, space)
         else:
-            print("Not a valid guess.")
+            print("NOT A VALID GUESS.")
         print(hangman_pics(lives))
         print(word_complete)
         print("\n")
     if guessed:
-        print("Congrats, you guessed the word! You win!")
+        print("CONGRATS! YOU GUESSED THE WORD! YOU WIN!")
     else:
-        print("Sorry, you lost! \n")
-        print("The word was " + word + ". See you in the afterlife:-)")
+        print("SORRY \U0001F62D YOU LOST! \n")
+        print("THE WORD WAS " + word + ". SEE YOU IN THE AFTERLIFE \U0001F480")
 
 
 def hangman_pics(lives):
