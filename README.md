@@ -48,7 +48,24 @@ Site owner Goals.
 * keep scores of different players
 * add an option for player to choose a topic for words to make this game more educational for users who are learning English
 * make it possible to play multiplayers game
+---
 
+### Technology Used
+* [Python programming language](https://en.wikipedia.org/wiki/Python_(programming_language))
+* [Github](https://github.com/)
+* [Gitpod](https://gitpod.io/)
+* [Lucidchart](https://www.lucidchart.com/)
+* [Heroku](https://www.heroku.com) 
+
+---
+### Testing
+* PEP8CI Python Validator:
+no significant errors were returned when passing through PEP8CI - [Website here](https://pep8ci.herokuapp.com/#)
+ 
+ <img src ="../hangman/readme_images/pep8validator.png" alt ="img of pep8 validation">
+
+* Tested the code in the Code Institute Heroku terminal and also the terminal inside of Gitpod.
+* Checked that symbols, numbers or empty spaces are coming up as invalid guesses when guessing the word.
 
 
 
