@@ -62,8 +62,8 @@ def game(word):
                 print("Well done!", guess, "is in the word!")
                 guessed_letters.append(guess)
                 word_as_list = list(word_complete)
-                indices = [i for i, letter in enumerate(word) if letter == guess]
-                for index in indices:
+                ind = [i for i, letter in enumerate(word) if letter == guess]
+                for index in ind:
                     word_as_list[index] = guess
                 # Replace blanks with correctly guessed letters
                 word_complete = "".join(word_as_list)
