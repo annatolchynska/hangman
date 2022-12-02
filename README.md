@@ -31,7 +31,7 @@ Site owner Goals.
 ### Flowchart
 ---
 
-<img src = "../hangman/readme_images/hangman.jpeg" alt = "img of the flowchart">
+<img src = "./readme_images/hangman.jpeg" alt = "img of the flowchart">
     
 ## FEATURES
 ---
@@ -64,7 +64,7 @@ Site owner Goals.
 * PEP8CI Python Validator:
 no significant errors were returned when passing through PEP8CI - [Website here](https://pep8ci.herokuapp.com/#)
  
- <img src ="../hangman/readme_images/pep8validator.png" alt ="img of pep8 validation">
+ <img src ="./readme_images/pep8validation.png" alt ="img of pep8 validation">
 
 * Tested the code in the Code Institute Heroku terminal and also the terminal inside of Gitpod.
 * Checked that symbols, numbers or empty spaces are coming up as invalid guesses when guessing the word.

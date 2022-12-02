@@ -39,7 +39,6 @@ def game(word):
     print("{:^70}".format("Welcome to \u2620  HANGMAN_GAME! \u2620 \n"))
     print("-------------------------------------------------------")
     name = input("Please enter your name: \n").upper()
-    clear_board()
     print("YOU HAVE TO GUESS WORD BY ONE LETTER AT A TIME,\n")
     print("YOU ONLY HAVE SIX TRIES OTHERWISE YOU'LL BE HANGED \n")
     print("-------------------------------------------------------")
@@ -105,7 +104,7 @@ def hangman_pics(lives):
                    --------
                    |      |
                    |      O
-                   |     \|/
+                   |     /|\\
                    |      |
                    |     / \\
                    -
@@ -115,7 +114,7 @@ def hangman_pics(lives):
                    --------
                    |      |
                    |      O
-                   |     \|/
+                   |     /|\\
                    |      |
                    |     /
                    -
@@ -125,7 +124,7 @@ def hangman_pics(lives):
                    --------
                    |      |
                    |      O
-                   |     \|/
+                   |     /|\\
                    |      |
                    |
                    -
@@ -135,7 +134,7 @@ def hangman_pics(lives):
                    --------
                    |      |
                    |      O
-                   |     \|
+                   |     /|
                    |      |
                    |
                    -
