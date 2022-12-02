@@ -25,24 +25,36 @@ def clear_board():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
-def game(word):
+def welcome_board():
     """
     The welcoming function of the game
+    """
+    clear_board()
+    print("-------------------------------------------------------")
+    print("{:^70}".format("Welcome to \u2620  HANGMAN_GAME! \u2620 \n"))
+    print("-------------------------------------------------------")
+    print("YOU HAVE TO GUESS WORD BY ONE LETTER AT A TIME,\n")
+    print("YOU ONLY HAVE SIX TRIES OTHERWISE YOU'LL BE HANGED \n")
+    print("-------------------------------------------------------")
+    print("{:^70}".format("HAVE FUN !"))
+    while True:
+        name = input("Please enter your name: ").upper()
+        if name.isalpha():
+            clear_board()
+            game(get_word())
+        else:
+            print("PLEASE USE LETTERS ONLY")
+
+
+def game(word):
+    """
+    The game itself
     """
     word_complete = "_" * len(word)
     guessed = False
     guessed_letters = []
     guessed_words = []
     lives = 6
-    clear_board()
-    print("-------------------------------------------------------")
-    print("{:^70}".format("Welcome to \u2620  HANGMAN_GAME! \u2620 \n"))
-    print("-------------------------------------------------------")
-    name = input("Please enter your name: \n").upper()
-    print("YOU HAVE TO GUESS WORD BY ONE LETTER AT A TIME,\n")
-    print("YOU ONLY HAVE SIX TRIES OTHERWISE YOU'LL BE HANGED \n")
-    print("-------------------------------------------------------")
-    print("{:^70}".format("HAVE FUN, " + name + "!"))
     print(hangman_pics(lives))
     print(word_complete)
     print("\n")
@@ -90,9 +102,25 @@ def game(word):
         print("\n")
     if guessed:
         print("CONGRATS! YOU GUESSED THE WORD! YOU WIN! \U0001F3C6")
+        while True:
+            play_again = input('Play Again? ( Y / N ) : ').upper()
+            if play_again == 'Y':
+                game(get_word())
+            elif play_again == 'N':
+                welcome_board()
+            else:
+                print('Please choose option Y or N ')
     else:
         print("SORRY \U0001F62D YOU LOST! \n")
         print("THE WORD WAS " + word + ". SEE YOU IN THE AFTERLIFE \U0001F480")
+        while True:
+            play_again = input('Play Again? ( Y / N ) : ').upper()
+            if play_again == 'Y':
+                game(get_word())
+            elif play_again == 'N':
+                welcome_board()
+            else:
+                print('Please choose option Y or N ')
 
 
 def hangman_pics(lives):
@@ -178,10 +206,12 @@ def main():
     function that runs the game and gives the options
     to run it again or exit
     """
+    welcome_board()
     word = get_word()
     game(word)
     while input("Play Again? (Y/N) ").upper() == "Y":
         clear_board()
+        welcome_board()
         word = get_word()
         game(word)
 
