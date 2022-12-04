@@ -1,6 +1,8 @@
 # <h1 align ="center">__💀 HANGMAN_GAME 💀__</h1>
 ---
-[live link is here]()
+[live link is here]("https://hangman-game1412.herokuapp.com/")
+
+<img src="./readme_images/responsiveimg.png" alt="image of responsiveness">
 
 HANGMAN is a guessing Python terminal game, which runs in the mock terminal of Code Institute on Heroku.
 
@@ -24,20 +26,27 @@ Returning user goals
 * As a Returning User, I want the navigation to be the same as it was the first time to keep it familiar.
 
 Site owner Goals.
-* As a Site owner, I want the game to have simple rules
-* As a Site owner, I want the site to be easily navigated
-* As a Site owner, I want the words not to be repeated
+* As a Site owner, I want the game to have simple rules.
+* As a Site owner, I want the site to be easily navigated.
+* As a Site owner, I want the words not to be repeated.
 
 ### Flowchart
 ---
 
-<img src = "./readme_images/hangman.jpeg" alt = "img of the flowchart">
+<img src = "./readme_images/hangman.jpeg" width="500" height="300" alt = "img of the flowchart">
     
 ## FEATURES
 ---
 ### Existing features
 * welcoming board with welcoming message, rules of the game and request to enter the player's name by input
-* game_board which displays the hidden word with an empty gallows
+
+<img src="./readme_images/welcomescreen.png" width="500" height="300" alt="image of the welcome screen og hangman game">
+
+
+* game board which displays the hidden word with an empty gallows
+
+<img src="./readme_images/gameboard.png" width="500" height="350" alt="image of the gaming board">
+
 * accepts user's input 
 * input validation 
    * user cannot enter a word that has more or less letters than the hidden word
@@ -46,6 +55,12 @@ Site owner Goals.
    * user can type the name using the letters only
    * user can choose an option to restart the game or not using Y/N only
 * the end game message which informs of winning/loosing
+
+<p float="left">
+  <img src="./readme_images/winscreen.png" width ="400" height="200" alt="image of the screen when user wins">
+  <img src="./readme_images/lostscreen.png" width="400" height="200" alt="image of the screen when user looses"/> 
+</p>
+
 * request input to start new game or exit
 
 ### Future features
@@ -57,7 +72,7 @@ Site owner Goals.
 
 For this game I used a list of random words as my model. The game creates a hidden word chosen from the list and the user has to guess it.
 
-[ASCII Art Library For Python]("https://pypi.org/project/art/") was used for fonts to give the game an oldschool vibes.
+[ASCII Art Library For Python]("https://pypi.org/project/art/") was used for fonts as a third party library to give the game an oldschool vibes.
 
 ### Technology Used
 * [Python programming language](https://en.wikipedia.org/wiki/Python_(programming_language))
@@ -78,7 +93,8 @@ no errors were returned when passing through PEP8CI - [Website here](https://pep
 
 ---
 ### Bugs and unfixed bugs
-While running the game I had the problem with a messy terminal. Fortunately, I found the solution with a function that clears terminal. No other bugs were found.
+While running the game I had the problem with a messy terminal. Fortunately, I found the solution with a function that clears terminal. 
+No other bugs were found.
 
 ---
 ### Deployment
