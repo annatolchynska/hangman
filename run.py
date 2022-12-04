@@ -41,12 +41,16 @@ def welcome_board():
     print("\U0001F480_HAVE__FUN_ !\U0001F480 ")
     print("-----------------------------------------------------------------")
     while True:
-        name = input("_Please_enter_your_name_: \n").upper()
-        if name.isalpha():
-            clear_board()
-            game(get_word())
-        else:
-            print("_PLEASE_USE_LETTERS_ONLY_")
+        try:
+            name = input("_Please_enter_your_name_: \n").upper()
+            if name.isalpha():
+                clear_board()
+                game(get_word())
+                break
+            else:
+                print("_PLEASE_USE_LETTERS_ONLY_")
+        except ValueError:
+            print("_SOMETHING_WENT_WRONG_")
 
 
 def game(word):
