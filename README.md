@@ -36,13 +36,15 @@ Site owner Goals.
 ## FEATURES
 ---
 ### Existing features
-* welcoming message and request to enter the player's name by input
-* explaining the rules of the game and display of the hidden word with an empty gallows
+* welcoming board with welcoming message, rules of the game and request to enter the player's name by input
+* game_board which displays the hidden word with an empty gallows
 * accepts user's input 
 * input validation 
    * user cannot enter a word that has more or less letters than the hidden word
    * the program informs the user if the letter is already used
    * the game gives user the feedback when the letter/word is correct/incorrect
+   * user can type the name using the letters only
+   * user can choose an option to restart the game or not using Y/N only
 * the end game message which informs of winning/loosing
 * request input to start new game or exit
 

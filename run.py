@@ -6,6 +6,7 @@ Import random word from the list in words.py
 # https://github.com/kiteco/python-youtube-code/blob/master/build-hangman-in-python/hangman.py
 import random
 import os
+from art import tprint
 from words import word_list
 
 
@@ -30,20 +31,22 @@ def welcome_board():
     The welcoming function of the game
     """
     clear_board()
-    print("-------------------------------------------------------")
-    print("{:^70}".format("Welcome to \u2620  HANGMAN_GAME! \u2620 \n"))
-    print("-------------------------------------------------------")
-    print("YOU HAVE TO GUESS WORD BY ONE LETTER AT A TIME,\n")
-    print("YOU ONLY HAVE SIX TRIES OTHERWISE YOU'LL BE HANGED \n")
-    print("-------------------------------------------------------")
-    print("{:^70}".format("HAVE FUN !"))
+    print("-----------------------------------------------------------------")
+    tprint("_WELCOME__TO_ \n", font="cybermedium")
+    tprint("_HANGMAN_GAME_! \n", font="cybermedium")
+    print("-----------------------------------------------------------------")
+    print("_YOU_HAVE_TO_GUESS_WORD_BY_ONE_LETTER_AT_A_TIME_,\n")
+    print("_YOU_ONLY_HAVE_SIX_TRIES_OTHERWISE_YOU'LL_BE_HANGED_ \n")
+    print("-----------------------------------------------------------------")
+    print("\U0001F480_HAVE__FUN_ !\U0001F480 ")
+    print("-----------------------------------------------------------------")
     while True:
-        name = input("Please enter your name: ").upper()
+        name = input("_Please_enter_your_name_: ").upper()
         if name.isalpha():
             clear_board()
             game(get_word())
         else:
-            print("PLEASE USE LETTERS ONLY")
+            print("_PLEASE_USE_LETTERS_ONLY_")
 
 
 def game(word):
@@ -60,19 +63,20 @@ def game(word):
     print("\n")
     # Runs guessing process
     while not guessed and lives > 0:
-        guess = input("Please guess a letter or word: \n").upper()
+        guess = input("_Please_guess_a_letter_or_word_: \n").upper()
         if len(guess) == 1 and guess.isalpha():
             # When the letter aleady has been used
             if guess in guessed_letters:
-                print("YOU'VE ALREADY GUESSED THE LETTER", guess)
+                print("_YOU'VE_ALREADY_GUESSED_THE_LETTER_", guess)
             # In case of incorrect answer
             elif guess not in word:
-                print("UNFORTUNATELY YOU'RE ONE STEP CLOSER TO BEING HANGED..")
+                print("_UNFORTUNATELY_YOU'RE_ONE_STEP_CLOSER_")
+                print("_TO_BEING_HANGED_")
                 lives -= 1
                 guessed_letters.append(guess)
             # In case of correct letter
             else:
-                print("WELL DONE!", guess, "IS IN THE WORD!")
+                print("_WELL_DONE!_", guess, "_IS_IN_THE_WORD!_")
                 guessed_letters.append(guess)
                 # Replace dashes with correctly guessed letters
                 word_as_list = list(word_complete)
@@ -85,10 +89,10 @@ def game(word):
         elif len(guess) == len(word) and guess.isalpha():
             # In case of correct guessing the word
             if guess in guessed_words:
-                print("YOU'VE CORRECTLY GUESSED THE WORD", guess)
+                print("_YOU'VE_CORRECTLY_GUESSED_THE_WORD_", guess)
             # In case of incorrect guessing the word
             elif guess != word:
-                print(guess, "IS WRONG!")
+                print(guess, "_IS_WRONG!_")
                 lives -= 1
                 guessed_words.append(guess)
             else:
@@ -96,31 +100,44 @@ def game(word):
                 word_complete = word
         # In case of invalid input (number, space)
         else:
-            print("NOT A VALID GUESS.")
+            print("_NOT_A_VALID_GUESS_")
         print(hangman_pics(lives))
         print(word_complete)
         print("\n")
     if guessed:
-        print("CONGRATS! YOU GUESSED THE WORD! YOU WIN! \U0001F3C6")
+        print("---------------------------------------------------")
+        print('\U0001F3C6 \U0001F3C6 \U0001F3C6 \U0001F3C6 \U0001F3C6')
+        tprint("_CONGRATS!_", font="cybermedium")
+        tprint("YOU_GUESSED_THE_WORD!_", font="cybermedium")
+        tprint("YOU WIN!_ ", font="cybermedium")
+        print('\U0001F3C6 \U0001F3C6 \U0001F3C6 \U0001F3C6 \U0001F3C6')
+        print("---------------------------------------------------")
         while True:
-            play_again = input('Play Again? ( Y / N ) : ').upper()
+            play_again = input('_Play_Again?_ ( Y / N ) : ').upper()
             if play_again == 'Y':
+                clear_board()
                 game(get_word())
             elif play_again == 'N':
                 welcome_board()
             else:
-                print('Please choose option Y or N ')
+                print('_Please_choose_option_Y_or_N_')
     else:
-        print("SORRY \U0001F62D YOU LOST! \n")
-        print("THE WORD WAS " + word + ". SEE YOU IN THE AFTERLIFE \U0001F480")
+        print("---------------------------------------------------")
+        print("\U0001F480 \U0001F480 \U0001F480 \U0001F480 \U0001F480")
+        tprint("_SORRY_YOU_LOST!_", font="cybermedium")
+        tprint("_THE WORD WAS_" + word + "\n", font="cybermedium")
+        tprint("_SEE_YOU_IN_THE_AFTERLIFE_ \n", font="cybermedium")
+        print("\U0001F480 \U0001F480 \U0001F480 \U0001F480 \U0001F480")
+        print("---------------------------------------------------")
         while True:
-            play_again = input('Play Again? ( Y / N ) : ').upper()
+            play_again = input('_Play_Again?_ ( Y / N ) : ').upper()
             if play_again == 'Y':
+                clear_board()
                 game(get_word())
             elif play_again == 'N':
                 welcome_board()
             else:
-                print('Please choose option Y or N ')
+                print('_Please_choose_option_Y_or_N_')
 
 
 def hangman_pics(lives):
