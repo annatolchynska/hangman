@@ -53,6 +53,11 @@ Site owner Goals.
 * add an option for player to choose a topic for words to make this game more educational for users who are learning English
 * make it possible to play multiplayers game
 ---
+### Data model and third party library
+
+For this game I used a list of random words as my model. The game creates a hidden word chosen from the list and the user has to guess it.
+
+[ASCII Art Library For Python]("https://pypi.org/project/art/") was used for fonts to give the game an oldschool vibes.
 
 ### Technology Used
 * [Python programming language](https://en.wikipedia.org/wiki/Python_(programming_language))
@@ -64,7 +69,7 @@ Site owner Goals.
 ---
 ### Testing
 * PEP8CI Python Validator:
-no significant errors were returned when passing through PEP8CI - [Website here](https://pep8ci.herokuapp.com/#)
+no errors were returned when passing through PEP8CI - [Website here](https://pep8ci.herokuapp.com/#)
  
  <img src ="./readme_images/pep8validation.png" alt ="img of pep8 validation">
 

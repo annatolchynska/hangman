@@ -101,6 +101,7 @@ def game(word):
         # In case of invalid input (number, space)
         else:
             print("_NOT_A_VALID_GUESS_")
+            print("_PLEASE_USE_LETTERS_ONLY_")
         print(hangman_pics(lives))
         print(word_complete)
         print("\n")
