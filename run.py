@@ -41,7 +41,7 @@ def welcome_board():
     print("\U0001F480_HAVE__FUN_ !\U0001F480 ")
     print("-----------------------------------------------------------------")
     while True:
-        name = input("_Please_enter_your_name_: ").upper()
+        name = input("_Please_enter_your_name_: \n").upper()
         if name.isalpha():
             clear_board()
             game(get_word())
@@ -114,7 +114,7 @@ def game(word):
         print('\U0001F3C6 \U0001F3C6 \U0001F3C6 \U0001F3C6 \U0001F3C6')
         print("---------------------------------------------------")
         while True:
-            play_again = input('_Play_Again?_ ( Y / N ) : ').upper()
+            play_again = input('_Play_Again?_ ( Y / N ) : \n').upper()
             if play_again == 'Y':
                 clear_board()
                 game(get_word())
@@ -131,7 +131,7 @@ def game(word):
         print("\U0001F480 \U0001F480 \U0001F480 \U0001F480 \U0001F480")
         print("---------------------------------------------------")
         while True:
-            play_again = input('_Play_Again?_ ( Y / N ) : ').upper()
+            play_again = input('_Play_Again?_ ( Y / N ) : \n').upper()
             if play_again == 'Y':
                 clear_board()
                 game(get_word())
