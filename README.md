@@ -1,6 +1,6 @@
 # <h1 align ="center">__💀 HANGMAN_GAME 💀__</h1>
 ---
-[live link is here]("https://hangman-game1412.herokuapp.com")
+[live link is here](https://hangman-game1412.herokuapp.com/)
 
 <img src="./readme_images/responsiveimg.png" alt="image of responsiveness">
 
