@@ -72,7 +72,7 @@ Site owner Goals.
 
 For this game I used a list of random words as my model. The game creates a hidden word chosen from the list and the user has to guess it.
 
-[ASCII Art Library For Python]("https://pypi.org/project/art/") was used for fonts as a third party library to give the game an oldschool vibes.
+[ASCII Art Library For Python](https://pypi.org/project/art/) was used for fonts as a third party library to give the game an oldschool vibes.
 
 ### Technology Used
 * [Python programming language](https://en.wikipedia.org/wiki/Python_(programming_language))
@@ -112,7 +112,3 @@ No other bugs were found.
 * the code for the game mostly was taken from Youtube tutorial ["how to build a hangman
 in 10 min with Python" by Kite](https://www.youtube.com/watch?v=m4nEnsavl6w) and [GitHub kiteco](https://github.com/kiteco/python-youtube-code/blob/master/build-hangman-in-python/hangman.py)
 * the code for function which clears the terminal was taken from these [sheets](http://www.coding4you.at/inf_tag/beginners_python_cheat_sheet.pdf)
-
-
-
-
