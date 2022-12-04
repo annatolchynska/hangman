@@ -227,7 +227,7 @@ def main():
     welcome_board()
     word = get_word()
     game(word)
-    while input("Play Again? (Y/N) ").upper() == "Y":
+    while input("Play Again? (Y/N) \n").upper() == "Y":
         clear_board()
         welcome_board()
         word = get_word()
