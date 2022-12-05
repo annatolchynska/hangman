@@ -102,6 +102,7 @@ No other bugs were found.
 * Go to the Heroku Dashboard.
 * Click New.
 * Select create a new app.
+* Set config Var's Key to PORT and value 8000.
 * Set the buildbacks to Python and NodeJS in that order.
 * Link the Heroku app to the repository.
 * Click on Deploy.
