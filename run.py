@@ -117,14 +117,17 @@ def game(word):
         print('\U0001F3C6 \U0001F3C6 \U0001F3C6 \U0001F3C6 \U0001F3C6')
         print("---------------------------------------------------")
         while True:
-            play_again = input('_Play_Again?_ ( Y / N ) : \n').upper()
-            if play_again == 'Y':
-                clear_board()
-                game(get_word())
-            elif play_again == 'N':
-                welcome_board()
-            else:
-                print('_Please_choose_option_Y_or_N_')
+            try:
+                play_again = input('_Play_Again?_ ( Y / N ) : \n').upper()
+                if play_again == 'Y':
+                    clear_board()
+                    game(get_word())
+                elif play_again == 'N':
+                    welcome_board()
+                else:
+                    print('_Please_choose_option_Y_or_N_')
+            except ValueError:
+                print("_SOMETHING_WENT_WRONG_")
     else:
         print("---------------------------------------------------")
         print("\U0001F480 \U0001F480 \U0001F480 \U0001F480 \U0001F480")
@@ -135,14 +138,17 @@ def game(word):
         print("\U0001F480 \U0001F480 \U0001F480 \U0001F480 \U0001F480")
         print("---------------------------------------------------")
         while True:
-            play_again = input('_Play_Again?_ ( Y / N ) : \n').upper()
-            if play_again == 'Y':
-                clear_board()
-                game(get_word())
-            elif play_again == 'N':
-                welcome_board()
-            else:
-                print('_Please_choose_option_Y_or_N_')
+            try:
+                play_again = input('_Play_Again?_ ( Y / N ) : \n').upper()
+                if play_again == 'Y':
+                    clear_board()
+                    game(get_word())
+                elif play_again == 'N':
+                    welcome_board()
+                else:
+                    print('_Please_choose_option_Y_or_N_')
+            except ValueError:
+                print("SOMETING_WENT_WRONG_")
 
 
 def hangman_pics(lives):
@@ -234,8 +240,6 @@ def main():
     while input("Play Again? (Y/N) \n").upper() == "Y":
         clear_board()
         welcome_board()
-        word = get_word()
-        game(word)
 
 
 if __name__ == "__main__":
